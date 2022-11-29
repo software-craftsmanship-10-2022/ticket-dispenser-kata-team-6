@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test:husky": "npm run test -- --watchAll=false",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watchAll"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
