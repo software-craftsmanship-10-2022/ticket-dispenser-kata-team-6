@@ -8,6 +8,10 @@ class TurnNumberSequence {
   public getNextTurnNumber() {
     return this.turnNumber++;
   }
+
+  public resetTurnNumber() {
+    this.turnNumber = 0;
+  }
 }
 
 const sequence = new TurnNumberSequence();
