@@ -1,9 +1,9 @@
-export interface TurnNumberStorage<T> {
+export interface TurnNumberStorage {
   getTurnNumber(): number;
   insert(number: number): void;
 }
 
-export default class TurnTicket<T> implements TurnNumberStorage<T> {
+export default class TurnTicket implements TurnNumberStorage {
   #turnNumber: number;
 
   constructor(turnNumber: number = 0) {

@@ -27,7 +27,7 @@ describe("[TicketDispenser]", () => {
     expect(secondTicket.getTurnNumber()).toBe(1);
   });
 
-  it.only("should be able to handle multiple ticket dispensers", () => {
+  it("should be able to handle multiple ticket dispensers", () => {
     const storage = new TurnTicket();
     const storage2 = new TurnTicket();
     const firstDispenser = new TicketDispenser(storage);
