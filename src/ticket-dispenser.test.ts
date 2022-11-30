@@ -39,3 +39,15 @@ describe("[TicketDispenser]", () => {
     expect(secondTicketDispenser1.getTurnNumber()).toBe(2);
   });
 });
+
+it("should not have same ticket number issued to two different customers", () => {
+  const firstDispenser = new TicketDispenser();
+  const secondDespenser = new TicketDispenser();
+
+  const firstTicketDispenser1 = firstDispenser.getTurnTicket();
+  const secondTicketDispenser1 = secondDespenser.getTurnTicket();
+
+  expect(firstTicketDispenser1.getTurnNumber()).not.toBe(
+    secondTicketDispenser1.getTurnNumber()
+  );
+});
