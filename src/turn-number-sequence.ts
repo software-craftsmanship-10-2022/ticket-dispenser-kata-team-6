@@ -1,9 +1,8 @@
 export interface Sequence {
   increase(): number;
-  resetNumber(): void;
 }
 
-class TurnNumberSequence implements Sequence {
+export default class TurnNumberSequence implements Sequence {
   private turnNumber: number;
 
   constructor() {
@@ -13,12 +12,4 @@ class TurnNumberSequence implements Sequence {
   public increase() {
     return this.turnNumber++;
   }
-
-  public resetNumber() {
-    this.turnNumber = 0;
-  }
 }
-
-const sequence = new TurnNumberSequence();
-
-export default sequence;

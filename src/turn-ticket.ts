@@ -1,18 +1,15 @@
 export interface Ticket {
-  turnNumber: number;
-  deploy(num: number): Ticket;
+  getNumber(): number;
 }
 
 export default class TurnTicket implements Ticket {
-  public turnNumber: number;
+  private turnNumber: number;
 
-  constructor() {
-    this.turnNumber = 0;
+  constructor(num: number) {
+    this.turnNumber = num;
   }
 
-  public deploy(num: number): Ticket {
-    this.turnNumber = num;
-
-    return this;
+  public getNumber(): number {
+    return this.turnNumber;
   }
 }

@@ -1,8 +1,8 @@
 import { Sequence } from "./turn-number-sequence";
-import { Ticket } from "./turn-ticket";
+import TurnTicket, { Ticket } from "./turn-ticket";
 
 export interface Dispenser {
-  getTicket(ticket: Ticket): Ticket;
+  generateTicket(): Ticket;
 }
 
 export default class TicketDispenser implements Dispenser {
@@ -12,11 +12,7 @@ export default class TicketDispenser implements Dispenser {
     this.sequence = sequence;
   }
 
-  public getTicket(ticket: Ticket): Ticket {
-    return ticket.deploy(this.getNextSequence());
-  }
-
-  private getNextSequence(): number {
-    return this.sequence.increase();
+  public generateTicket(): Ticket {
+    return new TurnTicket(this.sequence.increase());
   }
 }
