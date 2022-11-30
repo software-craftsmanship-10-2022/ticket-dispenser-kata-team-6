@@ -1,15 +1,20 @@
-class TurnNumberSequence {
+export interface Sequence {
+  increase(): number;
+  resetNumber(): void;
+}
+
+class TurnNumberSequence implements Sequence {
   private turnNumber: number;
 
   constructor() {
     this.turnNumber = 0;
   }
 
-  public getNextTurnNumber() {
+  public increase() {
     return this.turnNumber++;
   }
 
-  public resetTurnNumber() {
+  public resetNumber() {
     this.turnNumber = 0;
   }
 }
