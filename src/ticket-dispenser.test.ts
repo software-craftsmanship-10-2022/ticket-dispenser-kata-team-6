@@ -2,11 +2,6 @@ import TicketDispenser from "./ticket-dispenser";
 import sequence from "./turn-number-sequence";
 import TurnTicket from "./turn-ticket";
 
-/**
- * THINGS: turn number sequence does not reset after each test.
- * We can do an afterEach, but that involves mocking the class as well.
- */
-
 describe("[TicketDispenser]", () => {
   afterEach(() => {
     sequence.resetNumber();
@@ -39,16 +34,4 @@ describe("[TicketDispenser]", () => {
     expect(firstTicketDispenser2.turnNumber).toBe(1);
     expect(secondTicketDispenser1.turnNumber).toBe(2);
   });
-});
-
-it("should not have same ticket number issued to two different customers", () => {
-  const firstDispenser = new TicketDispenser();
-  const secondDespenser = new TicketDispenser();
-
-  const firstTicketDispenser1 = firstDispenser.getTurnTicket();
-  const secondTicketDispenser1 = secondDespenser.getTurnTicket();
-
-  expect(firstTicketDispenser1.getTurnNumber()).not.toBe(
-    secondTicketDispenser1.getTurnNumber()
-  );
 });
